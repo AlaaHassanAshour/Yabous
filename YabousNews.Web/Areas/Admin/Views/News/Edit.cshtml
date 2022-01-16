@@ -1,0 +1,108 @@
+﻿@model YabousNews.EditNewsDTO
+
+@{
+    ViewData["Title"] = "تعديل الخبر";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    modal-backdrop.show {
+        opacity: 0 !important;
+    }
+
+    .modal-backdrop {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: -1040 !important;
+        width: 100vw;
+        height: 100vh;
+        background-color: #000000;
+    }
+</style>
+<div class="p-10" style="background-color:white;">
+    <h3>عرض و تعديل الخبر</h3>
+    <hr />
+    <form method="post" action="/Admin/News/Edit/@Model.Id" enctype="multipart/form-data">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label">
+                        عنوان الخبر
+                        <span style="color:#ff0000">*</span>
+                    </label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Details" class="control-label">
+                        التفاصيل
+                        <span style="color:#ff0000">*</span>
+
+                    </label>
+                    <textarea asp-for="Details" class="form-control summernote note-codable" aria-multiline="true"></textarea>
+                    <span asp-validation-for="Details" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="NewsCategoryId" class="control-label">النوع</label>
+                    <select asp-for="NewsCategoryId" asp-items="ViewBag.NewsCategoryId" class="form-control">
+                        <option value="">الكل</option>
+                    </select>
+                    <span asp-validation-for="NewsCategoryId" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Image" class="control-label">
+                        الصورة الرئيسية
+                        <span style="color:#ff0000">*</span>
+                    </label>
+                    <img id="imgUpload" src="~/Images/@Model.Image" width="120" height="60" />
+                    <input id="Image" name="Image" type="file" class="form-control" />
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Author" class="control-label">الناشر</label>
+                    <input asp-for="Author" class="form-control" />
+                    <span asp-validation-for="Author" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="حفظ" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+@section Scripts{
+    <script src="js/pages/crud/forms/editors/summernote.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        $(document).ready(function () {
+            $('.summernote').summernote();
+        });
+
+        $("#Image").change(function () {
+            readURL(this);
+        });
+    </script>
+}

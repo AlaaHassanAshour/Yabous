@@ -1,0 +1,44 @@
+﻿@model YabousNews.Data.Models.GalleryImages
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<h4>GalleryImages</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form action="/Admin/GalleryImages/Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Image" class="control-label">
+                    <span style="color:#ff0000">*</span>
+                </label>
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GalleryId" class="control-label">
+                    <span style="color:#ff0000">*</span>
+                </label>
+                <select asp-for="GalleryId" class="form-control" asp-items="ViewBag.GalleryId"></select>
+                <span asp-validation-for="GalleryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a href="/Admin/GalleryImages/Index">الرجوع الي القائمة</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

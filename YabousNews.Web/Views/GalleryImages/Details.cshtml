@@ -1,0 +1,72 @@
+﻿@model IEnumerable<YabousNews.Data.Models.GalleryImages>
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_Layout";
+}
+<br />
+<div class="container">
+
+
+   
+    <div class="row">
+        @foreach (var item in Model)
+        {
+
+            <div class="col-lg-3">
+                <div class="vnews_item">
+                    <div class="zoom-img">
+                        <a data-toggle="lightbox" data-gallery="example-gallery" href="~/Images/@item.Image">
+                            <img src="~/Images/@item.Image" />
+                            </a>
+                    </div>
+                   
+                </div>
+            </div>
+            
+        }
+    </div>
+   
+    </div>
+    @*<table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        الصور
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a data-toggle="lightbox" href="#demoLightbox">
+                                Open Lightbox
+
+                                <img src="~/Images/@item.Image" />
+                            </a>
+                        </td>
+
+
+                    </tr>
+                }
+            </tbody>
+        </table>*@
+  
+
+
+@section Scripts {
+
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+
+    </script>
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+}

@@ -1,0 +1,61 @@
+﻿@model IEnumerable<YabousNews.Data.Models.GalleryImages>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+
+        <section class="content_inner_page">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="primary_right">
+               
+                            <ol class="breadcrumb">
+                                <li><a href="../index.html"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                                <li class="active">ألــبوم الصــور</li>
+                            </ol>
+                            <div class="category_content">
+                                <div class="row">
+
+
+
+                                    @foreach (var item in Model)
+                                    {
+
+                                        <div class="col-md-3 col-sm-4 col-xs-6">
+                                            <div class="cat_item">
+                                                <div class="cat_item_thumb">
+                                                    <a href="/GalleryImages/Details/@item.GalleryId">
+                                                        <img src="~/Images/@item.Image" alt="" class="img-responsive">
+                                                    </a>
+                                                </div>
+                                                <div class="cat_item_detail">
+                                                    <h2><a href="/GalleryImages/Details/@item.GalleryId">@item.Gallery.Title</a></h2>
+
+                                                </div>
+                                            </div><!--cat_item-->
+                                        </div>
+                                    }
+
+
+
+
+
+
+
+
+                                </div>
+                            </div>
+                     
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </section>

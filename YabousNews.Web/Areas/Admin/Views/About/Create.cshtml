@@ -1,0 +1,121 @@
+﻿@model YabousNews.Data.Models.About
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    modal-backdrop.show {
+        opacity: 0 !important;
+    }
+
+    .modal-backdrop {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: -1040 !important;
+        width: 100vw;
+        height: 100vh;
+        background-color: #000000;
+    }
+</style>
+<div class=" container  d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap p-10" style="background-color: white;">
+    <!--begin::Info-->
+    <div class="d-flex align-items-center flex-wrap mr-1">
+        <!--begin::Mobile Toggle-->
+        <button class="burger-icon burger-icon-left mr-4 d-inline-block d-lg-none" id="kt_subheader_mobile_toggle">
+            <span></span>
+        </button>
+        <!--end::Mobile Toggle-->
+        <!--begin::Page Heading-->
+        <div class="d-flex align-items-baseline flex-wrap mr-5">
+            <!--begin::Page Title-->
+            <h5 class="text-dark font-weight-bold my-1 mr-5">
+                <b> صفحة التعريف بالموقع النظام </b>- عرض وتعديل صفحة التعريف بالنظام
+            </h5>
+            <!--end::Page Title-->
+            <!--begin::Breadcrumb-->
+            <!--ul li-->
+            <!--end::Breadcrumb-->
+        </div>
+        <!--end::Page Heading-->
+    </div>
+    <!--end::Info-->
+</div>
+<div class="content flex-column-fluid" id="kt_content">
+    <form method="post" action="/Admin/About/Create" enctype="multipart/form-data">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @*<div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="control-label"> مكان ظهور القائمة الفرعية</label>
+                    <select asp-for="SubMenu" asp-items="@new  SelectList(Enum.GetNames(typeof(YabousNews.Data.Models.SubMenu)))">
+                        class="form-control">
+                        <option selected="selected" value="">اختر مكان ظهور القائمة الفرعية</option>
+                    </select>
+                    <span asp-validation-for="SubMenu" class="text-danger" />
+                </div>
+            </div>
+        </div>*@
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="TitleSubId" class="control-label">
+                        النوع
+                        <span style="color:#ff0000">*</span>
+                    </label>
+                    <select asp-for="TitleSubId" asp-items="ViewBag.SubTitleList" class="form-control">
+                        <option value="">الكل</option>
+                    </select>
+                    <span asp-validation-for="TitleSubId" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label">
+                        عنوان القائمة الفرعية الداخلية
+                        <span style="color:#ff0000">*</span>
+
+                    </label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label">
+                        التفاصيل
+                        <span style="color:#ff0000">*</span>
+
+                    </label>
+                    <textarea asp-for="Description" class="form-control summernote note-codable" aria-multiline="true"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="حفظ" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+
+@section Scripts {
+    <script src="js/pages/crud/forms/editors/summernote.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        $(document).ready(function () {
+            $('.summernote').summernote();
+        });
+
+    </script>
+}

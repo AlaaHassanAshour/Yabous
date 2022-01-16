@@ -1,0 +1,36 @@
+﻿@model YabousNews.Data.Models.Ads
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<div>
+    <hr />
+    <dl class="dl-horizontal content">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.url)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.url)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.imeg)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.imeg)
+        </dd>
+    </dl>
+
+    <form method="post" action="/Admin/Ads/Delete/@Model.Id">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+    </form>
+</div>

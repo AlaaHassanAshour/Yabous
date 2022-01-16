@@ -1,0 +1,362 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>aspnet-YabousNews.Web-54D8426B-89BE-47F6-9508-D99D2DF27F59</UserSecretsId>
+    <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include=".config\dotnet-tools.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\pages\builder.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\advanced\column-rendering.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\advanced\column-visibility.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\advanced\footer-callback.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\advanced\multiple-controls.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\advanced\row-callback.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\advanced\row-grouping.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\basic\basic.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\basic\headers.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\basic\paginations.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\basic\scrollable.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\data-sources\ajax-client-side.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\data-sources\ajax-server-side.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\data-sources\html.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\data-sources\javascript.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\extensions\buttons.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\extensions\colreorder.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\extensions\fixedcolumns.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\extensions\fixedheader.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\extensions\keytable.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\extensions\responsive.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\extensions\rowgroup.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\extensions\rowreorder.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\extensions\scroller.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\extensions\select.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\search-options\advanced-search.js" />
+    <None Include="wwwroot\js\pages\crud\datatables\search-options\column-search.js" />
+    <None Include="wwwroot\js\pages\crud\file-upload\dropzonejs.js" />
+    <None Include="wwwroot\js\pages\crud\file-upload\image-input.js" />
+    <None Include="wwwroot\js\pages\crud\file-upload\uppy.js" />
+    <None Include="wwwroot\js\pages\crud\forms\editors\bootstrap-markdown.js" />
+    <None Include="wwwroot\js\pages\crud\forms\editors\ckeditor-balloon-block.js" />
+    <None Include="wwwroot\js\pages\crud\forms\editors\ckeditor-balloon.js" />
+    <None Include="wwwroot\js\pages\crud\forms\editors\ckeditor-classic.js" />
+    <None Include="wwwroot\js\pages\crud\forms\editors\ckeditor-document.js" />
+    <None Include="wwwroot\js\pages\crud\forms\editors\ckeditor-inline.js" />
+    <None Include="wwwroot\js\pages\crud\forms\editors\quill.js" />
+    <None Include="wwwroot\js\pages\crud\forms\editors\summernote.js" />
+    <None Include="wwwroot\js\pages\crud\forms\editors\tinymce.js" />
+    <None Include="wwwroot\js\pages\crud\forms\validation\form-controls.js" />
+    <None Include="wwwroot\js\pages\crud\forms\validation\form-widgets.js" />
+    <None Include="wwwroot\js\pages\crud\forms\widgets\autosize.js" />
+    <None Include="wwwroot\js\pages\crud\forms\widgets\bootstrap-datepicker.js" />
+    <None Include="wwwroot\js\pages\crud\forms\widgets\bootstrap-daterangepicker.js" />
+    <None Include="wwwroot\js\pages\crud\forms\widgets\bootstrap-datetimepicker.js" />
+    <None Include="wwwroot\js\pages\crud\forms\widgets\bootstrap-maxlength.js" />
+    <None Include="wwwroot\js\pages\crud\forms\widgets\bootstrap-multipleselectsplitter.js" />
+    <None Include="wwwroot\js\pages\crud\forms\widgets\bootstrap-select.js" />
+    <None Include="wwwroot\js\pages\crud\forms\widgets\bootstrap-switch.js" />
+    <None Include="wwwroot\js\pages\crud\forms\widgets\bootstrap-timepicker.js" />
+    <None Include="wwwroot\js\pages\crud\forms\widgets\bootstrap-touchspin.js" />
+    <None Include="wwwroot\js\pages\crud\forms\widgets\clipboard.js" />
+    <None Include="wwwroot\js\pages\crud\forms\widgets\form-repeater.js" />
+    <None Include="wwwroot\js\pages\crud\forms\widgets\google-recaptcha.js" />
+    <None Include="wwwroot\js\pages\crud\forms\widgets\input-mask.js" />
+    <None Include="wwwroot\js\pages\crud\forms\widgets\ion-range-slider.js" />
+    <None Include="wwwroot\js\pages\crud\forms\widgets\nouislider.js" />
+    <None Include="wwwroot\js\pages\crud\forms\widgets\select2.js" />
+    <None Include="wwwroot\js\pages\crud\forms\widgets\tagify.js" />
+    <None Include="wwwroot\js\pages\crud\forms\widgets\typeahead.js" />
+    <None Include="wwwroot\js\pages\crud\ktdatatable\advanced\column-rendering.js" />
+    <None Include="wwwroot\js\pages\crud\ktdatatable\advanced\column-width.js" />
+    <None Include="wwwroot\js\pages\crud\ktdatatable\advanced\horizontal.js" />
+    <None Include="wwwroot\js\pages\crud\ktdatatable\advanced\modal.js" />
+    <None Include="wwwroot\js\pages\crud\ktdatatable\advanced\record-selection.js" />
+    <None Include="wwwroot\js\pages\crud\ktdatatable\advanced\row-details.js" />
+    <None Include="wwwroot\js\pages\crud\ktdatatable\advanced\vertical.js" />
+    <None Include="wwwroot\js\pages\crud\ktdatatable\api\events.js" />
+    <None Include="wwwroot\js\pages\crud\ktdatatable\api\methods.js" />
+    <None Include="wwwroot\js\pages\crud\ktdatatable\base\data-ajax.js" />
+    <None Include="wwwroot\js\pages\crud\ktdatatable\base\data-json.js" />
+    <None Include="wwwroot\js\pages\crud\ktdatatable\base\data-local.js" />
+    <None Include="wwwroot\js\pages\crud\ktdatatable\base\html-table.js" />
+    <None Include="wwwroot\js\pages\crud\ktdatatable\base\local-sort.js" />
+    <None Include="wwwroot\js\pages\crud\ktdatatable\base\translation.js" />
+    <None Include="wwwroot\js\pages\crud\ktdatatable\child\data-ajax.js" />
+    <None Include="wwwroot\js\pages\crud\ktdatatable\child\data-local.js" />
+    <None Include="wwwroot\js\pages\custom\chat\chat.js" />
+    <None Include="wwwroot\js\pages\custom\contacts\add-contact.js" />
+    <None Include="wwwroot\js\pages\custom\contacts\edit-contact.js" />
+    <None Include="wwwroot\js\pages\custom\contacts\list-columns.js" />
+    <None Include="wwwroot\js\pages\custom\contacts\list-datatable.js" />
+    <None Include="wwwroot\js\pages\custom\ecommerce\my-orders.js" />
+    <None Include="wwwroot\js\pages\custom\education\school\calendar.js" />
+    <None Include="wwwroot\js\pages\custom\education\school\library.js" />
+    <None Include="wwwroot\js\pages\custom\education\school\students.js" />
+    <None Include="wwwroot\js\pages\custom\education\school\teachers.js" />
+    <None Include="wwwroot\js\pages\custom\education\student\calendar.js" />
+    <None Include="wwwroot\js\pages\custom\education\student\profile.js" />
+    <None Include="wwwroot\js\pages\custom\inbox\inbox.js" />
+    <None Include="wwwroot\js\pages\custom\login\login-3.js" />
+    <None Include="wwwroot\js\pages\custom\login\login-4.js" />
+    <None Include="wwwroot\js\pages\custom\login\login-5.js" />
+    <None Include="wwwroot\js\pages\custom\login\login-6.js" />
+    <None Include="wwwroot\js\pages\custom\login\login-general.js" />
+    <None Include="wwwroot\js\pages\custom\login\login.js" />
+    <None Include="wwwroot\js\pages\custom\profile\profile.js" />
+    <None Include="wwwroot\js\pages\custom\projects\add-project.js" />
+    <None Include="wwwroot\js\pages\custom\projects\list-datatable.js" />
+    <None Include="wwwroot\js\pages\custom\todo\todo.js" />
+    <None Include="wwwroot\js\pages\custom\user\add-user.js" />
+    <None Include="wwwroot\js\pages\custom\user\edit-user.js" />
+    <None Include="wwwroot\js\pages\custom\user\list-datatable.js" />
+    <None Include="wwwroot\js\pages\custom\wizard\wizard-1.js" />
+    <None Include="wwwroot\js\pages\custom\wizard\wizard-2.js" />
+    <None Include="wwwroot\js\pages\custom\wizard\wizard-3.js" />
+    <None Include="wwwroot\js\pages\custom\wizard\wizard-4.js" />
+    <None Include="wwwroot\js\pages\custom\wizard\wizard-5.js" />
+    <None Include="wwwroot\js\pages\custom\wizard\wizard-6.js" />
+    <None Include="wwwroot\js\pages\features\base\dropdown.js" />
+    <None Include="wwwroot\js\pages\features\calendar\background-events.js" />
+    <None Include="wwwroot\js\pages\features\calendar\basic.js" />
+    <None Include="wwwroot\js\pages\features\calendar\external-events.js" />
+    <None Include="wwwroot\js\pages\features\calendar\google.js" />
+    <None Include="wwwroot\js\pages\features\calendar\list-view.js" />
+    <None Include="wwwroot\js\pages\features\cards\draggable.js" />
+    <None Include="wwwroot\js\pages\features\cards\tools.js" />
+    <None Include="wwwroot\js\pages\features\charts\amcharts\charts.js" />
+    <None Include="wwwroot\js\pages\features\charts\amcharts\maps.js" />
+    <None Include="wwwroot\js\pages\features\charts\amcharts\stock-charts.js" />
+    <None Include="wwwroot\js\pages\features\charts\apexcharts.js" />
+    <None Include="wwwroot\js\pages\features\charts\flotcharts.js" />
+    <None Include="wwwroot\js\pages\features\charts\google-charts.js" />
+    <None Include="wwwroot\js\pages\features\custom\spinners.js" />
+    <None Include="wwwroot\js\pages\features\maps\google-maps.js" />
+    <None Include="wwwroot\js\pages\features\maps\jqvmap.js" />
+    <None Include="wwwroot\js\pages\features\maps\jvectormap.js" />
+    <None Include="wwwroot\js\pages\features\maps\leaflet.js" />
+    <None Include="wwwroot\js\pages\features\miscellaneous\blockui.js" />
+    <None Include="wwwroot\js\pages\features\miscellaneous\bootstrap-notify.js" />
+    <None Include="wwwroot\js\pages\features\miscellaneous\cropper.js" />
+    <None Include="wwwroot\js\pages\features\miscellaneous\dual-listbox.js" />
+    <None Include="wwwroot\js\pages\features\miscellaneous\idle-timer.js" />
+    <None Include="wwwroot\js\pages\features\miscellaneous\kanban-board.js" />
+    <None Include="wwwroot\js\pages\features\miscellaneous\perfect-scrollbar.js" />
+    <None Include="wwwroot\js\pages\features\miscellaneous\session-timeout.js" />
+    <None Include="wwwroot\js\pages\features\miscellaneous\sticky-panels.js" />
+    <None Include="wwwroot\js\pages\features\miscellaneous\sweetalert2.js" />
+    <None Include="wwwroot\js\pages\features\miscellaneous\toastr.js" />
+    <None Include="wwwroot\js\pages\features\miscellaneous\treeview.js" />
+    <None Include="wwwroot\js\pages\my-script.js" />
+    <None Include="wwwroot\js\pages\widgets.js" />
+    <None Include="wwwroot\js\scripts.bundle.js" />
+    <None Include="wwwroot\js\site.js" />
+    <None Include="wwwroot\plugins\custom\ckeditor\ckeditor-balloon-block.bundle.js" />
+    <None Include="wwwroot\plugins\custom\ckeditor\ckeditor-balloon.bundle.js" />
+    <None Include="wwwroot\plugins\custom\ckeditor\ckeditor-classic.bundle.js" />
+    <None Include="wwwroot\plugins\custom\ckeditor\ckeditor-document.bundle.js" />
+    <None Include="wwwroot\plugins\custom\ckeditor\ckeditor-inline.bundle.js" />
+    <None Include="wwwroot\plugins\custom\cropper\cropper.bundle.js" />
+    <None Include="wwwroot\plugins\custom\datatables\datatables.bundle.js" />
+    <None Include="wwwroot\plugins\custom\draggable\draggable.bundle.js" />
+    <None Include="wwwroot\plugins\custom\flot\flot.bundle.js" />
+    <None Include="wwwroot\plugins\custom\fullcalendar\fullcalendar.bundle.js" />
+    <None Include="wwwroot\plugins\custom\gmaps\gmaps.js" />
+    <None Include="wwwroot\plugins\custom\jqvmap\jqvmap.bundle.js" />
+    <None Include="wwwroot\plugins\custom\jstree\jstree.bundle.js" />
+    <None Include="wwwroot\plugins\custom\kanban\kanban.bundle.js" />
+    <None Include="wwwroot\plugins\custom\leaflet\leaflet.bundle.js" />
+    <None Include="wwwroot\plugins\custom\prismjs\prismjs.bundle.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\advlist\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\advlist\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\advlist\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\anchor\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\anchor\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\anchor\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\autolink\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\autolink\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\autolink\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\autoresize\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\autoresize\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\autoresize\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\autosave\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\autosave\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\autosave\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\bbcode\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\bbcode\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\bbcode\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\charmap\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\charmap\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\charmap\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\codesample\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\codesample\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\codesample\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\code\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\code\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\code\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\colorpicker\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\colorpicker\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\colorpicker\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\contextmenu\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\contextmenu\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\contextmenu\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\directionality\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\directionality\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\directionality\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\emoticons\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\emoticons\js\emojis.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\emoticons\js\emojis.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\emoticons\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\emoticons\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\fullpage\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\fullpage\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\fullpage\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\fullscreen\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\fullscreen\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\fullscreen\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\help\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\help\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\help\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\hr\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\hr\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\hr\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\imagetools\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\imagetools\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\imagetools\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\image\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\image\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\image\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\importcss\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\importcss\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\importcss\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\insertdatetime\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\insertdatetime\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\legacyoutput\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\legacyoutput\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\link\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\link\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\link\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\lists\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\lists\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\lists\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\media\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\media\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\media\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\nonbreaking\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\nonbreaking\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\noneditable\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\noneditable\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\noneditable\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\pagebreak\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\pagebreak\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\pagebreak\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\paste\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\paste\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\paste\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\preview\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\preview\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\preview\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\print\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\print\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\print\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\quickbars\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\quickbars\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\quickbars\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\save\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\save\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\save\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\searchreplace\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\searchreplace\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\searchreplace\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\spellchecker\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\spellchecker\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\spellchecker\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\tabfocus\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\tabfocus\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\tabfocus\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\table\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\table\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\table\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\template\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\template\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\template\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\textcolor\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\textcolor\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\textcolor\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\textpattern\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\textpattern\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\textpattern\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\toc\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\toc\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\toc\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\visualblocks\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\visualblocks\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\visualblocks\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\visualchars\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\visualchars\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\visualchars\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\wordcount\index.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\wordcount\plugin.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\plugins\wordcount\plugin.min.js" />
+    <None Include="wwwroot\plugins\custom\tinymce\tinymce.bundle.js" />
+    <None Include="wwwroot\plugins\custom\uppy\uppy.bundle.js" />
+    <None Include="wwwroot\plugins\global\fonts\%40fortawesome\fa-brands-400.svg" />
+    <None Include="wwwroot\plugins\global\fonts\%40fortawesome\fa-brands-400.woff2" />
+    <None Include="wwwroot\plugins\global\fonts\%40fortawesome\fa-regular-400.svg" />
+    <None Include="wwwroot\plugins\global\fonts\%40fortawesome\fa-regular-400.woff2" />
+    <None Include="wwwroot\plugins\global\fonts\%40fortawesome\fa-solid-900.svg" />
+    <None Include="wwwroot\plugins\global\fonts\%40fortawesome\fa-solid-900.woff2" />
+    <None Include="wwwroot\plugins\global\fonts\flaticon2\Flaticon2.svg" />
+    <None Include="wwwroot\plugins\global\fonts\flaticon2\Flaticon2.woff2" />
+    <None Include="wwwroot\plugins\global\fonts\flaticon\Flaticon.svg" />
+    <None Include="wwwroot\plugins\global\fonts\keenthemes-icons\Ki.svg" />
+    <None Include="wwwroot\plugins\global\fonts\keenthemes-icons\Ki.woff2" />
+    <None Include="wwwroot\plugins\global\fonts\line-awesome\la-brands-400.svg" />
+    <None Include="wwwroot\plugins\global\fonts\line-awesome\la-brands-400.woff2" />
+    <None Include="wwwroot\plugins\global\fonts\line-awesome\la-regular-400.svg" />
+    <None Include="wwwroot\plugins\global\fonts\line-awesome\la-regular-400.woff2" />
+    <None Include="wwwroot\plugins\global\fonts\line-awesome\la-solid-900.svg" />
+    <None Include="wwwroot\plugins\global\fonts\line-awesome\la-solid-900.woff2" />
+    <None Include="wwwroot\plugins\global\fonts\socicon\socicon.svg" />
+    <None Include="wwwroot\plugins\global\fonts\summernote\summernote.woff2" />
+    <None Include="wwwroot\plugins\global\plugins.bundle.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCoreHero.ToastNotification" Version="1.1.0" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="linqtotwitter" Version="6.10.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Twitter" Version="5.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="Nancy" Version="2.0.0" />
+    <PackageReference Include="TweetinviAPI" Version="5.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="wwwroot\bootstrap-lightbox\" />
+    <Folder Include="wwwroot\Files\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\YabousNews.Data\YabousNews.Data.csproj" />
+  </ItemGroup>
+
+</Project>

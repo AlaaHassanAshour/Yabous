@@ -1,0 +1,25 @@
+﻿@model YabousNews.Data.Models.Videos
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<div>
+    <hr />
+    <dl class="dl-horizontal content">
+        <dt>
+            @Html.DisplayNameFor(model => model.Url)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Url)
+        </dd>
+    </dl>
+
+          <form action="/Admin/Videos/Delete" method="post">
+
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="حذف" class="btn btn-default" /> |
+        <a href= "/Admin/Videos/Index">الرجوع الي القائمة الرئسية</a>
+    </form>
+</div>

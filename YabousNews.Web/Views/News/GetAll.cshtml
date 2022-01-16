@@ -1,0 +1,55 @@
+﻿@model IEnumerable<YabousNews.Data.Models.News>
+@{
+    Layout = "_Layout";
+}
+
+<br />
+<br />
+<br />
+<<section class="content_inner_page">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="primary_right">
+
+
+                        <div class="row">
+
+
+                            @foreach (var item in Model.Take(20))
+                            {
+
+
+
+                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                    <div class="mNews_item">
+                                        <div class="thumb height-img-overlay">
+                                            <a href="/News/Details/@item.Id" class="height-img-overlay">
+                                                <img src="~/images/@item.Image" class="img-responsive">
+                                            </a>
+                                            <div class="img-overlay">
+                                                <a href="/News/Details/@item.Id" class="Photo-overlay">
+                                                </a>
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+
+                                            <h2 class="title">
+                                                <a href="/News/Details/@item.Id" class="text-img-overlay">  @item.Title </a>
+
+                                            </h2>
+                                            <span class="span-date"> @item.CreatedAt </span>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>

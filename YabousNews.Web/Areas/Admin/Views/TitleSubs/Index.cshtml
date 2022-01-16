@@ -1,0 +1,44 @@
+﻿@model IEnumerable<YabousNews.Data.Models.TitleSub>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<hr />
+<hr />
+<p>
+    <a href="Admin/TitleSubs/Create" class="btn btn-light-primary font-weight-bolder btn-sm">
+        <i class="fa fa-plus-square"></i>
+        <span>إضافة قائمة فرعية جديد</span>
+    </a>
+</p>
+<table class="table m-table m-table--head-separator-primary content">
+    <thead>
+        <tr>
+            <th>
+                الاسسم
+            </th>
+            <th>
+                تصنيف الاخبار
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NewsCategory.Name)
+                </td>
+                <td>
+                    <a href="/Admin/TitleSubs/Delete/@item.Id">حذف</a>|
+                    <a href="/Admin/TitleSubs/Edit/@item.Id">تعديل</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

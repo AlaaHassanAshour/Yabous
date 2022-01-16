@@ -1,0 +1,48 @@
+D:\Decode Company\Yabous Project\YabousNews.Web\YabousNews.Data\bin\Debug\net5.0\YabousNews.Data.deps.json
+D:\Decode Company\Yabous Project\YabousNews.Web\YabousNews.Data\bin\Debug\net5.0\YabousNews.Data.dll
+D:\Decode Company\Yabous Project\YabousNews.Web\YabousNews.Data\bin\Debug\net5.0\ref\YabousNews.Data.dll
+D:\Decode Company\Yabous Project\YabousNews.Web\YabousNews.Data\bin\Debug\net5.0\YabousNews.Data.pdb
+D:\Decode Company\Yabous Project\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Decode Company\Yabous Project\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.AssemblyInfoInputs.cache
+D:\Decode Company\Yabous Project\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.AssemblyInfo.cs
+D:\Decode Company\Yabous Project\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.csproj.CoreCompileInputs.cache
+D:\Decode Company\Yabous Project\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.dll
+D:\Decode Company\Yabous Project\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\ref\YabousNews.Data.dll
+D:\Decode Company\Yabous Project\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.pdb
+D:\Decode Company\Yabous Project\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.csprojAssemblyReference.cache
+C:\Users\LTC2021\Downloads\Yabous Project\Yabous Project\YabousNews.Web\YabousNews.Data\bin\Debug\net5.0\YabousNews.Data.deps.json
+C:\Users\LTC2021\Downloads\Yabous Project\Yabous Project\YabousNews.Web\YabousNews.Data\bin\Debug\net5.0\YabousNews.Data.dll
+C:\Users\LTC2021\Downloads\Yabous Project\Yabous Project\YabousNews.Web\YabousNews.Data\bin\Debug\net5.0\ref\YabousNews.Data.dll
+C:\Users\LTC2021\Downloads\Yabous Project\Yabous Project\YabousNews.Web\YabousNews.Data\bin\Debug\net5.0\YabousNews.Data.pdb
+C:\Users\LTC2021\Downloads\Yabous Project\Yabous Project\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.csproj.AssemblyReference.cache
+C:\Users\LTC2021\Downloads\Yabous Project\Yabous Project\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LTC2021\Downloads\Yabous Project\Yabous Project\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.AssemblyInfoInputs.cache
+C:\Users\LTC2021\Downloads\Yabous Project\Yabous Project\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.AssemblyInfo.cs
+C:\Users\LTC2021\Downloads\Yabous Project\Yabous Project\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.csproj.CoreCompileInputs.cache
+C:\Users\LTC2021\Downloads\Yabous Project\Yabous Project\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.dll
+C:\Users\LTC2021\Downloads\Yabous Project\Yabous Project\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\ref\YabousNews.Data.dll
+C:\Users\LTC2021\Downloads\Yabous Project\Yabous Project\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.pdb
+D:\Download\jDownloader\YabousNews.Web\YabousNews.Data\bin\Debug\net5.0\YabousNews.Data.deps.json
+D:\Download\jDownloader\YabousNews.Web\YabousNews.Data\bin\Debug\net5.0\YabousNews.Data.dll
+D:\Download\jDownloader\YabousNews.Web\YabousNews.Data\bin\Debug\net5.0\ref\YabousNews.Data.dll
+D:\Download\jDownloader\YabousNews.Web\YabousNews.Data\bin\Debug\net5.0\YabousNews.Data.pdb
+D:\Download\jDownloader\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.csproj.AssemblyReference.cache
+D:\Download\jDownloader\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Download\jDownloader\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.AssemblyInfoInputs.cache
+D:\Download\jDownloader\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.AssemblyInfo.cs
+D:\Download\jDownloader\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.csproj.CoreCompileInputs.cache
+D:\Download\jDownloader\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.dll
+D:\Download\jDownloader\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\ref\YabousNews.Data.dll
+D:\Download\jDownloader\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.pdb
+C:\Users\hp\Desktop\مكتبة العمل\YabousNews\YabousNews.Web\YabousNews.Data\bin\Debug\net5.0\YabousNews.Data.deps.json
+C:\Users\hp\Desktop\مكتبة العمل\YabousNews\YabousNews.Web\YabousNews.Data\bin\Debug\net5.0\YabousNews.Data.dll
+C:\Users\hp\Desktop\مكتبة العمل\YabousNews\YabousNews.Web\YabousNews.Data\bin\Debug\net5.0\ref\YabousNews.Data.dll
+C:\Users\hp\Desktop\مكتبة العمل\YabousNews\YabousNews.Web\YabousNews.Data\bin\Debug\net5.0\YabousNews.Data.pdb
+C:\Users\hp\Desktop\مكتبة العمل\YabousNews\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.csproj.AssemblyReference.cache
+C:\Users\hp\Desktop\مكتبة العمل\YabousNews\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\Desktop\مكتبة العمل\YabousNews\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.AssemblyInfoInputs.cache
+C:\Users\hp\Desktop\مكتبة العمل\YabousNews\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.AssemblyInfo.cs
+C:\Users\hp\Desktop\مكتبة العمل\YabousNews\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.csproj.CoreCompileInputs.cache
+C:\Users\hp\Desktop\مكتبة العمل\YabousNews\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.dll
+C:\Users\hp\Desktop\مكتبة العمل\YabousNews\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\ref\YabousNews.Data.dll
+C:\Users\hp\Desktop\مكتبة العمل\YabousNews\YabousNews.Web\YabousNews.Data\obj\Debug\net5.0\YabousNews.Data.pdb

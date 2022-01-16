@@ -1,0 +1,40 @@
+﻿@model YabousNews.Data.Models.Videos
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<hr />
+<div class="row content">
+    <div class="col-md-4 ">
+        <form action="/Admin/Videos/Create" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Url" class="control-label"></label>
+                <input asp-for="Url" class="form-control" />
+                <span asp-validation-for="Url" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <div class="col-2">
+                    <label asp-for="Image" class="col-form-label"></label>
+                </div>
+                <div class="col-5">
+                    <input type="file" multiple asp-for="Image" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="حفظ" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,30 @@
+﻿@model YabousNews.Data.Models.GalleryImages
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Gallery)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Gallery.Id)
+        </dd>
+    </dl>
+    <form method="post" action="/Admin/GalleryImages/Delete/@Model.Id">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="حذف" class="btn btn-bg-danger" /> |
+        <a href="/Admin/GalleryImages/Index">الرجوع الي القائمة الرئسية</a>
+    </form>
+</div>

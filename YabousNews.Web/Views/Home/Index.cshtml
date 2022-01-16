@@ -1,0 +1,536 @@
+﻿@model YabousNews.Web.ViewModels.IndexVM
+@{
+    Layout = "_Layout";
+}
+@{
+    ViewData["Title"] = "Home Page";
+}
+@{
+    string currentUrl = Context.Request.Scheme + "://" + Context.Request.Host + Context.Request.Path;
+    string enc = System.Net.WebUtility.UrlEncode(currentUrl);
+
+
+}
+<div class="container">
+
+    <div class="row background-new-1">
+
+
+
+        @foreach (var item in Model.News.Where(x => x.NewsCategoryId == 2).OrderByDescending(i => i.UpdatedAt).Take(3))
+        {
+            <div class="splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="col-md-5 padding-right-0">
+                                <div class="about_module">
+                                    <img class="img-new-1" src="~/Images/@item.Image" style=" width: 100%;" alt="صورة">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h1 class="h1-new-1"> @item.Title</h1>
+                                <span class="span-date"> @item.CreatedAt</span>
+                                <a href="/News/Details/@item.Id" class="h3-new-1">
+                                    @Html.Raw(item.Details)
+                                </a>
+
+                                <div class="social-new1">
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=@enc" target="_blank">
+                                        <div class="fac">
+                                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+
+                                    <a href="https://twitter.com/intent/tweet?url=@enc&News/Details/@item.Id" target="_blank">
+                                        <div class="twi">
+                                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+
+
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            //break;
+        }
+    </div>
+</div>
+
+
+<section class="section_majorNews-1">
+    <div class="container">
+
+        <div class="row div-new-2">
+            <div class="various_news_list">
+                <div class="row">
+
+                    @foreach (var item in Model.News.Where(x => x.NewsCategoryId == 2).Take(5).Skip(1))
+                    {
+
+                        <div class="col-lg-3">
+                            <div class="vnews_item">
+                                <div class="zoom-img">
+                                    <a href="/News/Details/@item.Id" class="height-img-news-2">
+                                        <img src="~/Images/@item.Image" class="img-responsive ">
+                                    </a>
+                                </div>
+                                <h2 class="vnews_title padding-h2-news-2">
+                                    <a href="/News/Details/@item.Id">@item.Title</a>
+                                </h2>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section_Enterprise-news">
+    <div class="container ">
+        <div class="row">
+            <div class="col-lg-9 padding-right-0">
+                <div class="s_head">
+                    <h2 class="box_name">أهم الأخبار</h2>
+                    <a href="/News/Index/2" class="box_more">عرض المزيد<i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></a>
+                </div>
+
+                <div class="s_content  background-Enterprise-news ">
+                    <div class="row">
+
+
+                        @foreach (var item in Model.News.Where(x => x.NewsCategoryId == 2).Take(14).Skip(5))
+                        {
+
+
+
+                            <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="mNews_item">
+                                    <div class="thumb height-img-overlay">
+                                        <a href="News/Details/@item.Id" class="height-img-overlay">
+                                            <img src="~/images/@item.Image" class="img-responsive">
+                                        </a>
+                                        <div class="img-overlay">
+                                            <a href="/News/Details/@item.Id" class="Photo-overlay">
+                                                <i class="fa fa-picture-o" aria-hidden="true"></i>
+                                            </a>
+
+                                            <a href="http://www.twitter.com/share?url=http://www.google.com/" target="_blank">
+                                                <div class="twi-2">
+                                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                                </div>
+                                            </a>
+
+                                            <a href="http://www.facebook.com/share.php?u=<url>" target="_blank">
+                                                <div class="fac-2">
+                                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                                </div>
+                                            </a>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="detail">
+                                        <h2 class="title">
+                                            <a href="/News/Details/@item.Id" class="text-img-overlay">  @item.Title </a>
+
+                                        </h2>
+                                        <span class="span-date"> @item.CreatedAt </span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                    </div>
+                </div>
+            </div>
+
+            @foreach (var item in Model.Attachment.Take(1))
+            {
+                <div class="col-lg-3 padding-left-0">
+
+                    <div class="s_head">
+                        <h2 class="box_name">اخر اصدارات مؤسسة</h2>
+                        <a href="/Attachments/Index/@item.Id" class="box_more">عرض المزيد<i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></a>
+                    </div>
+
+                    <div class="background-Enterprise-news height-background-Enterprise-news">
+                        <div class="">
+
+                            @foreach (var items in Model.Attachment.Take(4))
+                            {
+
+
+                                <div class="esdarat-thumb">
+                                    <div>
+                                        <a href="~/Files/@items.File" target="_blank">
+                                            <img src="~/Images/@items.Image" alt="" class="img-responsive">
+                                        </a>
+                                    </div>
+                                    <div class="detail">
+                                        <h2 class="title">
+                                            <a href="~/Files/@items.File" target="_blank">@items.Title </a>
+                                        </h2>
+                                    </div>
+
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+
+            <div class="col-lg-9 padding-right-0">
+                <div class="s_head margin-top-head">
+                    <h2 class="box_name">المقالات</h2>
+                    <a href="/News/Index/1" class="box_more">عرض المزيد<i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></a>
+                </div>
+                <div class="s_content  background-Enterprise-news height-background-Enterprise-news">
+
+
+                    <div class="row">
+                        @foreach (var item in Model.News.Where(x => x.NewsCategoryId == 1).Take(6))
+                        {
+
+
+
+
+                            <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="mNews_item">
+                                    <div class="thumb">
+                                        <a href="/News/Details/@item.Id">
+                                            <img src="~/images/@item.Image" class="img-responsive">
+                                        </a>
+
+                                        <div class="img-overlay">
+                                            <a href="#" class="Photo-overlay">
+                                                <i class="fa fa-picture-o" aria-hidden="true"></i>
+                                            </a>
+
+                                            <span>
+                                                <a href="https://twitter.com/intent/tweet?url=@enc&text=test" target="_blank" rel="noopener noreferrer nofollow">
+
+                                                    <i class="fab fa-twitter fa-fw"></i>
+
+                                                </a>
+                                            </span>
+                                            <span>
+                                                <a href="https://www.facebook.com/sharer/sharer.php?u=@enc" target="_blank">
+                                                    <i class="fab fa-facebook-f fa-fw"></i>
+                                                </a>
+                                            </span>
+
+                                        </div>
+                                    </div>
+                                    <div class="detail">
+                                        <h2 class="title">
+                                            <a href="/News/Details/@item.Id">@item.Title .</a>
+
+                                        </h2>
+                                        <span class="span-date"> @item.CreatedAt</span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                        }
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 padding-left-0">
+                <div class="s_head margin-top-head">
+                    <h2 class="box_name">وسائط مرئية</h2>
+                    <a href="/GalleryImages/Index" class="box_more">عرض المزيد<i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></a>
+                </div>
+
+                <div class="background-Enterprise-news height-background-Enterprise-news">
+                    <div class="">
+
+                        @foreach (var item in Model.GalleryImages.Take(3))
+                        {
+
+                            <div class="esdarat-thumb">
+                                <div>
+                                    <img src="~/images/@item.Image" alt="" class="img-responsive">
+
+                                </div>
+                                <div class="detail">
+                                    <h2 class="title">
+                                        <a href="/GalleryImages/Index">@item.Gallery.Title</a>
+                                    </h2>
+                                </div>
+
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+
+
+
+</section>
+
+
+@foreach (var item in Model.Ads.Take(1))
+{
+
+    <section class="section_fullbg">
+        <div class="fullBg" style="background-image: url(/Images/@item.imeg); background-size: cover;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="fullBg_detail">
+
+
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </section><!--section_fullbg-->
+}
+
+
+<section class="Studies-videos">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 padding-right-0">
+
+
+                <div class="s_head margin-top-head">
+                    <h2 class="box_name">دراسات وأبحاث</h2>
+                    <a href="/News/Index/5" class="box_more">عرض المزيد<i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></a>
+                </div>
+
+                @foreach (var itemes in Model.News.Where(x => x.NewsCategoryId == 5).Take(1))
+                {
+                    <div class="s_content  background-Studies-videos">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="item">
+                                    <a href="/News/Details/@itemes.Id">
+
+                                        <div class="fontimg">
+                                            <img class="d-block w-100" src="~/images/@itemes.Image" alt="Third slide">
+                                        </div>
+                                    </a>
+                                    <div class="item-text">
+                                        <span class="span-date-2"> @itemes.CreatedAt </span>
+
+                                        <div class="social-news">
+
+                                            @*<span>
+                                                    <a href="https://twitter.com/intent/tweet?url=@enc&text=test" target="_blank" rel="noopener noreferrer nofollow">
+
+                                                        <i class="fab fa-twitter fa-fw"></i>
+
+                                                    </a>
+                                                </span>*@
+                                            @*<span>
+                                                    <a href="https://www.facebook.com/sharer/sharer.php?u=@enc" target="_blank">
+                                                        <i class="fab fa-facebook-f fa-fw"></i>
+                                                    </a>
+                                                </span>*@
+                                            <a href="https://www.facebook.com/sharer/sharer.php?u=@enc" target="_blank">
+                                                <div class="fac">
+                                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                                </div>
+                                            </a>
+                                            <a href="https://twitter.com/intent/tweet?url=@enc&text=" target="_blank ">
+                                                <div class="twi">
+                                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <a href="/News/Details/@itemes.Id">
+                                    <h4> @itemes.Title</h4>
+                                </a>
+                            </div>
+                            @foreach (var iteme in Model.News.Where(x => x.NewsCategoryId == 5).Take(4).Skip(1))
+                            {
+
+                                <div class="col-lg-6 display-ipad-pro">
+                                    <div class="v_news_main clearfix">
+                                        <div class="vm_thumb">
+                                            <a href="/News/Details/@iteme.Id">
+
+                                                <img src="~/images/@iteme.Image" alt="" class="img-responsive">
+                                            </a>
+                                        </div>
+                                        <div class="vm_detail">
+                                            <h2>
+                                                <a href="/News/Details/@iteme.Id">
+                                                    @iteme.Title
+                                                </a>
+                                            </h2>
+                                            <span class="span-date-3"> @iteme.CreatedAt</span>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+
+            @foreach (var item in Model.Videos.Take(1))
+            {
+
+                <div class="col-lg-3 padding-left-0">
+                    <div class="s_head margin-top-head">
+                        <h2 class="box_name">فيديوهات</h2>
+                        <a href="/Videos/Index" class="box_more">عرض المزيد<i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="background-Studies-videos">
+                        <div class="">
+                            <div class="mNews_item">
+                                <div class="">
+
+                                    <iframe width="260" height="300" src="@item.Url" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="detail">
+                                    <a href="@item.Url" target="_blank"> @item.Name  </a>
+                                    <br />
+                                    <br />
+                                    <a href="/Videos/Index">للاطلاع على المزيد من الفيدهات. اضغط هنا</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="section-Tweets">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 padding-right-0">
+                <div class="s_head margin-top-head">
+                    <h2 class="box_name">مدونة القدس</h2>
+                    <a href="/News/Index/4" class="box_more">عرض المزيد<i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></a>
+                </div>
+                <div class="s_content  background-Studies-videos">
+                    <div class="row">
+
+
+                        <div class="col-lg-12">
+
+                            @foreach (var itemes in Model.News.Where(x => x.NewsCategoryId == 4).Take(8))
+                            {
+
+                                <div class="v_news_main clearfix  quds-m">
+                                    <div class="vm_thumb mNews_item">
+                                        <a href="/News/Index/5">
+                                            <img src="~/images/@itemes.Image" alt="" class="img-responsive">
+                                        </a>
+                                    </div>
+                                    <div class="vm_detail">
+                                        <h2>
+                                            <a href="/News/Details/@itemes.Id">
+                                                @itemes.Title
+                                            </a>
+                                        </h2>
+                                        <span class="span-date-3"> @itemes.CreatedAt </span>
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 padding-left-0">
+                <div class="s_head margin-top-head">
+                    <h2 class="box_name">شاركنا تغريدات</h2>
+                    <a href="/News/Contact" class="box_more">عرض المزيد<i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></a>
+                </div>
+                <div class="sec_warpper wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0.600s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.6s; animation-name: fadeInUp;">
+                    <div class="tweets_block content mCustomScrollbar _mCS_1 mCS-dir-rtl scrollbar" id="style-2">
+                        <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0">
+                            <div id="mCSB_1_container" class="mCSB_container" style="position: relative; top: 0px; left: 0px;" dir="rtl">
+                                @*@ViewBag.tweet*@
+                                @{
+                                    var tweetUrl = "";
+                                }
+
+                                @foreach (var itemes in ViewBag.tweet.data)
+                                {
+
+                                    tweetUrl = "https://twitter.com/AlqudsYabous/status/"+ @itemes.id;
+
+                                    <a href=@tweetUrl class="tweet_item" target="_blank">
+
+                                        <div class="tw_head clearfix">
+                                            <div class="tw_name clearfix">
+                                                <span class="tw_n_icon"><img src="images/user.png" alt="" class="mCS_img_loaded"></span>
+                                                <span class="tw_n_txt">مؤسسة القدس الدولية</span>
+                                            </div>
+                                            <div class="tw_font"><i class="fa fa-twitter"></i></div>
+                                        </div>
+
+                                        <div class="tw_body">
+                                            <h4>@itemes.text</h4>
+
+                                        </div>
+
+                                        @*<p href="" class="a-mCustomScrollbar">
+                                            مزيد
+                                        </p>*@
+                                    </a>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</section>
+
+@section Scripts{
+    <script>
+        function fbs_click() {
+            u = location.href; t = document.title; window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) +
+                '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436');
+            return false;
+        }
+
+        new Splide('.splide').mount();
+
+
+
+    </script>
+
+}

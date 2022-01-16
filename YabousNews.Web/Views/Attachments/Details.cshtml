@@ -1,0 +1,41 @@
+﻿@model YabousNews.Data.Models.Attachment
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_Layout";
+
+}
+
+<section class="content_inner_page">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-9">
+                <div class="primary_right">
+
+                    <ol class="breadcrumb">
+                        <li><a href="../index.html"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                        <li><a href="../category/4.html">اسم الاصدار</a></li>
+                    </ol>
+                        <div class="post_content" style="padding: 25px;">
+                            <a href="@Model.File" >@Model.Title</a>
+                            <div class="post-thumb">
+                                <a href="@Model.File" >
+                                    <img src="~/Images/pdflog.png" alt="" class="img-responsive">
+                                </a>
+                                    </div>
+
+                        </div>
+
+                    
+
+
+
+                </div><!--primary_right-->
+            </div>
+
+
+
+        </div>
+    </div>
+</section>

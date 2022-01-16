@@ -1,0 +1,32 @@
+﻿@model YabousNews.Data.Models.TitleSub
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<br />
+    <hr />
+    <dl class="dl-horizontal content">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NewsCategory)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NewsCategory.Id)
+        </dd>
+    </dl>
+    
+    <form action="/Admin/TitleSubs/Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="حذف" class="btn btn-default" /> |
+       
+    </form>
+</div>

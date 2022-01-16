@@ -1,0 +1,36 @@
+﻿@model YabousNews.Data.Models.TitleSub
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<hr />
+<hr />
+<hr />
+<div class="row content">
+    <div class="col-md-4">
+        <form action="/Admin/TitleSubs/Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">عنوان القائمة الفرعية</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewsCategoryId" class="control-label">تحت اي تصنيف</label>
+                <select asp-for="NewsCategoryId" class="form-control" asp-items="ViewBag.NewsCategoryId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="حفظ" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\Decode Company\Yabous Project\YabousNews.Web\YabousNews.Web\bin\Release\net5.0\publish\</_PublishTargetUrl>
+    <History>True|2021-08-09T12:06:42.5393901Z;</History>
+  </PropertyGroup>
+</Project>

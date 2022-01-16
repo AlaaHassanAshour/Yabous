@@ -1,0 +1,96 @@
+﻿@model YabousNews.EditSettingsDTO
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class=" container  d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap p-10" style="background-color: white;">
+    <!--begin::Info-->
+    <div class="d-flex align-items-center flex-wrap mr-1">
+        <!--begin::Mobile Toggle-->
+        <button class="burger-icon burger-icon-left mr-4 d-inline-block d-lg-none" id="kt_subheader_mobile_toggle">
+            <span></span>
+        </button>
+        <!--end::Mobile Toggle-->
+        <!--begin::Page Heading-->
+        <div class="d-flex align-items-baseline flex-wrap mr-5">
+            <!--begin::Page Title-->
+            <h5 class="text-dark font-weight-bold my-1 mr-5">
+                <b> إعدادات النظام </b>- عرض وتعديل إعدادات النظام
+            </h5>
+            <!--end::Page Title-->
+            <!--begin::Breadcrumb-->
+            <!--ul li-->
+            <!--end::Breadcrumb-->
+        </div>
+        <!--end::Page Heading-->
+    </div>
+    <!--end::Info-->
+</div>
+<div class="content flex-column-fluid" id="kt_content">
+    <form method="post" action="/Admin/Settings/Edit/@Model.Id" enctype="multipart/form-data">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label">
+                        عنوان الموقع
+                        <span style="color:#ff0000">*</span>
+                    </label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Logo" class="control-label">
+                        الشعار
+                        <span style="color:#ff0000">*</span>
+                    </label>
+                    <img id="imgUpload" src="~/Images/@Model.Logo" width="120" height="40" />
+                    <input id="Logo" name="Logo" type="file" class="form-control" />
+                    <span asp-validation-for="Logo" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="MobileNo" class="control-label">رقم الجوال</label>
+                    <input asp-for="MobileNo" class="form-control" />
+                    <span asp-validation-for="MobileNo" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label">البريد الالكتروني</label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="حفظ" class="btn btn-primary" />
+            <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">إلغاء الامر</button>
+        </div>
+    </form>
+</div>
+
+@section scripts{  
+
+    <script> 
+
+        $("#Logo").change(function () {
+            readURL(this);
+        });
+
+    </script>
+<partial name="_ValidationScriptsPartial" />
+}

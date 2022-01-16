@@ -1,0 +1,44 @@
+﻿@model YabousNews.EditContactDTO
+
+@{
+    ViewData["Title"] = "تعديل وسيلة تواصل";
+    Layout = null;
+}
+<form method="post" action="/Admin/Contact/Edit/@Model.Id" onsubmit="return jQueryModalPostForms(this);">
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label asp-for="SocialMedia" class="control-label">وسيلة الاتصال و التواصل</label>
+                <select asp-for="SocialMedia" class="form-control">
+                    <option value="">اختر</option>
+                    <option value="fa fa-youtube">يوتيوب</option>
+                    <option value="fa fa-instagram">انستقرام</option>
+                    <option value="fa fa-facebook">فيسبوك</option>
+                    <option value="fa fa-twitter">تويتر</option>
+                    <option value="fa fa-snapchat">سناب شات</option>
+                
+                </select>
+                <span asp-validation-for="SocialMedia" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label asp-for="Link" class="control-label">الرابط</label>
+                <input asp-for="Link" class="form-control" />
+                <span asp-validation-for="Link" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="حفظ" class="btn btn-primary" />
+        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">إلغاء الامر</button>
+    </div>
+</form>
+
+<partial name="_ValidationScriptsPartial" />

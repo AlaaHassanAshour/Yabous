@@ -1,0 +1,56 @@
+﻿@model IEnumerable<YabousNews.Data.Models.Videos>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<br />
+<p>
+    <a href="Admin/Videos/Create" title="إضافة صورة جديد" class="btn btn-light-primary font-weight-bolder btn-sm">
+        <i class="fa fa-plus-square"></i>
+        <span>إضافة</span>
+    </a>
+
+
+</p>
+<table class="table content">
+    <thead>
+        <tr>
+            <th>
+                رابط الفيديو
+            </th>
+            <th>
+                اسم الفيديو
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.Name)
+
+                </td>
+
+
+                <td>
+
+                    <a href="@Html.DisplayFor(modelItem => item.Url)">@Html.DisplayFor(modelItem => item.Url) </a>
+
+                </td>
+                <td>
+
+                    <a href="/Admin/Videos/Edit/@item.Id" class=" btn btn-light-primary font-weight-bolder btn-sm">تعديل</a> |
+                    <a href="/Admin/Videos/Delete/@item.Id" class=" btn btn-light-primary font-weight-bolder btn-sm">حذف</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

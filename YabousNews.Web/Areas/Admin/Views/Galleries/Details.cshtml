@@ -1,0 +1,32 @@
+﻿@model YabousNews.Data.Models.Gallery
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Gallery</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Details)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Details)
+        </dd>
+   
+    </dl>
+</div>
+<div>
+    <a href="/Admin/Galleries/Edit/@Model.Id">Edit</a> |
+    <a href="/Admin/Galleries/Index">Back to List</a>
+</div>

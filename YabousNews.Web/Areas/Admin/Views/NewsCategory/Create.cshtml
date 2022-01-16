@@ -1,0 +1,31 @@
+﻿@model YabousNews.CreateNewsCategoryDTO
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = null;
+}
+
+<form method="post" action="/Admin/NewsCategory/Create" onsubmit="return jQueryModalPostForms(this);">
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">
+                    الاسم
+                    <span style="color:#ff0000">*</span>
+                </label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="إضافة" class="btn btn-primary" />
+        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">إلغاء الامر</button>
+    </div>
+</form> 
+ 
+<partial name="_ValidationScriptsPartial" />

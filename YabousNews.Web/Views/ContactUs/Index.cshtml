@@ -1,0 +1,57 @@
+﻿@model IEnumerable<YabousNews.Data.Models.ContactUs>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<table class="table content">
+    <thead>
+        <tr>
+            <th>
+                الاسم الاول
+            </th>
+            <th>
+                الاسم الاخير
+            </th>
+            <th>
+                الايميل
+            </th>
+            <th>
+                التعليقات
+            </th>
+            <th>
+                رقم الهاتف
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phonenamber)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">تعديل </a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">التفاصيل</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">حذف</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

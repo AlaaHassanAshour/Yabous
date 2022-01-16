@@ -1,0 +1,234 @@
+﻿@model YabousNews.Data.Models.News
+@{
+    Layout = "_Layout";
+    string currentUrl = Context.Request.Scheme + "://" + Context.Request.Host + Context.Request.Path;
+    string enc = System.Net.WebUtility.UrlEncode(currentUrl);
+}
+<style>
+
+    #footer li {
+        display: inline-block;
+        width: 150px;
+        background: none;
+    }
+
+        #footer li a {
+            background: none;
+            border-left: none;
+            color: #fff;
+        }
+
+        #footer li ul {
+            display: none;
+        }
+
+    #footer h3 {
+        color: #eee;
+        font-size: 17px;
+        margin-top: 5px;
+    }
+
+    #footer li a {
+        line-height: 32px;
+    }
+
+    #footer .main_menu_links > li > a > i {
+        display: none;
+    }
+
+    img {
+        border-radius: 1rem !important;
+    }
+
+    .div-new-2 {
+        border-radius: 1rem;
+    }
+
+    .background-Enterprise-news {
+        border-radius: 1rem;
+    }
+
+    .s_head {
+        border-radius: 1rem;
+    }
+
+    .box_name {
+        border-radius: 0 0.8rem 0.8rem 0;
+    }
+
+    .background-new-1 {
+        margin-top: 1%;
+    }
+
+
+    .esdarat-thumb {
+        width: 150px;
+        hight: 110px;
+        floate: right;
+    }
+
+    .esdarat-thumb {
+        width: 100% !important;
+        padding-bottom: 15px;
+    }
+
+        .esdarat-thumb .detail {
+            height: 60px;
+            overflow: hidden;
+        }
+
+        .esdarat-thumb img {
+            max-height: 315px !important;
+            width: 100% !important;
+        }
+
+    .height-background-Enterprise-news {
+        height: 800px !important;
+        overflow: hidden;
+    }
+
+    .background-Studies-videos {
+        border-radius: 1rem;
+    }
+
+    .v_news_main .vm_thumb {
+        width: 27% !important;
+    }
+
+    .mNews_item iframe {
+        width: 100% !important;
+        height: 200px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .v_news_main .vm_thumb > a > img {
+        max-height: 100px !important;
+        width: 100% !important;
+        min-height: 100px !important;
+    }
+
+    .quds-m {
+        width: 49%;
+        display: inline-block;
+    }
+
+    .section_majorNews-1 {
+        background-color: #f7f7f7 !important;
+    }
+
+    .section_Enterprise-news {
+        background-color: #f7f7f7 !important;
+    }
+
+    .Studies-videos {
+        background-color: #f7f7f7 !important;
+    }
+
+    .section-Tweets {
+        background-color: #f7f7f7 !important;
+    }
+
+    .box_more {
+        font-size: 14px;
+    }
+
+    .about_module img {
+        width: 95% height: 310px;
+        max-height: 350px;
+    }
+
+
+    element.style {
+    }
+
+    .background-new-1 {
+        margin-top: 1%;
+    }
+
+    .background-new-1 {
+        margin-top: 1%;
+    }
+
+    .background-new-1 {
+        height: 335px;
+    }
+
+    #footer {
+        padding-top: 35px;
+        background-color: #333333;
+        padding-bottom: 0px;
+    }
+
+    .bottom_footer {
+        background-color: #222;
+        margin-top: 15px;
+        padding-top: 5px;
+    }
+
+    .ekko-lightbox-nav-overlay a span {
+        position: absolute;
+    }
+
+    .zoom-img {
+        margin: 25px 0;
+    }
+
+    .post-thumb img {
+        width: 100%;
+    }
+
+    .submenu {
+        top: 0;
+        position: absolute;
+        right: 100%;
+        width: 200px;
+        background: #fff;
+        padding: 10px;
+        border: #e0e0e0 solid 1px;
+    }
+</style>
+<section class="content_inner_page">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="primary_right">
+
+                    <ol class="breadcrumb">
+                        <li><a href="../index.html"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                        <li><a href="../category/4.html">@Model.NewsCategory.Name</a></li>
+                        <li class="active">تفاصيل الخبر</li>
+                    </ol>
+                    <div>
+                        <h1 class="page-title">@Model.Title</h1>
+                        <p class="date_post">@Model.CreatedAt</p>
+                        <div class="post-thumb">
+                            <img src="~/Images/@Model.Image" alt="" class="img-responsive">
+                            <br />
+
+                            <p class="text-center" style=" font-size: 35px; ">
+                                @Html.Raw(Model.Details)
+                            </p>     <div class="social-new1">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=@enc" target="_blank">
+                                    <div class="fac">
+                                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                                <a href="https://twitter.com/intent/tweet?url=@enc" target="_blank">
+                                    <div class="twi">
+                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div><!--primary_right-->
+            </div>
+
+
+        </div>
+    </div>
+</section>

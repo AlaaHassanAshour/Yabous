@@ -1,0 +1,63 @@
+﻿@model IEnumerable<YabousNews.Data.Models.About>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+
+<div class="row">
+    <div class="col-md-3">
+        <p>
+            <a href="Admin/About/Create" class="btn btn-light-primary font-weight-bolder btn-sm">
+                <i class="fa fa-plus-square"></i>
+                <span>إضافة صفحة تعريفية جديد</span>
+            </a>
+        </p>
+    </div>
+    <div class="col-md-3">
+
+        <p>
+            <a href="Admin/TitleSubs/index" class="btn btn-light-primary font-weight-bolder btn-sm">
+                <i class="fa fa-plus-square"></i>
+                <span> القوائم  الفرعية </span>
+            </a>
+        </p>
+    </div>
+</div>
+<table table class="table m-table m-table--head-separator-primary content">
+    <thead>
+        <tr>
+            <th>
+                العنوان
+            </th>
+            <th>
+                عنوان القائمة الفرعية
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TitleSub.Name)
+            </td>
+            <td>
+                <a href="/Admin/About/Edit/@item.Id">تعديل</a> |
+
+
+                <a href="/Admin/About/Delete/@item.Id">حذف</a>
+            </td>
+
+        </tr>
+        }
+    </tbody>
+</table>
+

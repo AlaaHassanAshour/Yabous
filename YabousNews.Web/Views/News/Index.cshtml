@@ -1,0 +1,92 @@
+﻿@model IEnumerable<YabousNews.Data.Models.News>
+
+
+@{ 
+    Layout = "_Layout";
+}
+<section class="content_inner_page">
+    <div class="container">
+        <div class="row">
+            ﻿
+            <div class="col-md-9">
+                <div class="primary_right">
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                        <li class="active">الاخبار</li>
+
+                    </ol>
+                    <div class="category_content">
+                        <div class="row">
+
+                            @foreach (var item in Model)
+                            {
+
+
+                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                    <div class="cat_item">
+                                        <div class="cat_item_thumb">
+                                            <a href="/News/Details/@item.Id">
+                                                <img src="~/Images/@item.Image" alt="" class="img-responsive">
+                                            </a>
+                                        </div>
+                                        <div class="cat_item_detail">
+                                            <h2><a href="/News/Details/@item.Id">@item.Title</a></h2>
+                                            <p class="datetime"><span>@item.CreatedAt</span></p>
+                                            <p class="category">
+                                                <a href="../news/25689.html">
+                                                    <i class="fa fa-calendar" aria-hidden="true"></i><span></span>
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div><!--cat_item-->
+                                </div>
+
+                            }
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+            <div class="col-md-3">
+
+                <div class="secondary_left">
+                    <div class="sideBar">
+
+                        <div class="side_box layout_1">
+                            <h2 class="side_box_title"><a href="#">الأكثر قراءة من هذا التصنيف</a></h2>
+                            @foreach (var item in Model.Take(7))
+                            {
+                                <div class="side_box_body">
+
+                                    <ul class="side_box_list">
+                                        <div class="div-img">
+                                            <img src="images/news2.png" alt="" style="width: 100%;">
+                                        </div>
+
+                                        <li>
+                                            <a href="/News/Details/@item.Id" class="clearfix">
+                                                <img src="~/Images/@item.Image"
+                                                     alt="">
+                                                <div class="side_details">
+                                                    <p>@item.Title</p>
+                                                </div>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                }
+                            </div>
+
+                    </div>
+                </div><!--secondary_left-->
+            </div>
+
+
+        </div>
+    </div>
+</section>

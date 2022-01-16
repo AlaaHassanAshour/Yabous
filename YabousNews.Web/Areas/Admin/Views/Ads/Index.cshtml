@@ -1,0 +1,56 @@
+﻿@model IEnumerable<YabousNews.Data.Models.Ads>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<p>
+    <a href="Admin/Ads/Create" class="btn btn-light-primary font-weight-bolder btn-sm">
+        <i class="fa fa-plus-square"></i>
+        <span>إضافة اعلان جديد</span>
+    </a>
+</p>
+
+<table class="table content">
+    <thead>
+        <tr>
+            <th>
+                الاسم
+            </th>
+            <th>
+                الرابط
+            </th>
+            <th>
+                الصورة
+            </th>
+            <th>
+                مكان ضهور الاعلان
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.url)
+            </td>
+            <td>
+                <img src="~/Images/@item.imeg"style="width:200px;" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpDown)
+            </td>
+            <td>
+                <a href="/Admin/Ads/Delete/@item.Id">حذف</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

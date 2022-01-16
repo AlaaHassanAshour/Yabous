@@ -1,0 +1,893 @@
+﻿@inject YabousNews.Data.ApplicationDbContext context
+@{
+    var settings = context.Settings.Find(1);
+    var Logo = !string.IsNullOrEmpty(settings.Logo) ? "/media/images/logo2.png" : "~/Images/" + settings.Logo;
+    var Title = settings.Title;
+    var Email = settings.Email;
+    var contact = context.Contact.Where(x => x.IsDelete.Equals(false)).ToList();
+    var About = context.About.OrderByDescending(x => x.Id).ToList();
+    var subTitle = context.TitleSub.OrderByDescending(x => x.Id).ToList();
+    var CatAttatcment = context.CategoryAttatcmant.OrderByDescending(x => x.Id).ToList();
+    var Ads = context.Ads.OrderByDescending(x => x.Id).Where(x => x.UpDown == 0).ToList();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>@Title</title>
+    <!-- Stylesheets -->
+    <link href="~/css/bootstrap.css" rel="stylesheet">
+    <link href="~/css/font-awesome.css" rel="stylesheet">
+    <link href="~/css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/style.css" rel="stylesheet">
+    <link href="~/css/bootstrap-rtl.min.css" rel="stylesheet">
+    <link rel="image_src" href="http://www.murrayhilltech.com/images/LogoColorNoText.jpg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
+
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+    <link href="~/css/splide.min.css" rel="stylesheet">
+
+
+    <meta name="description" content="يبوس القــدس">
+    <meta name="keywords" content="يبوس القــدس">
+    <meta name="author" content="">
+    <meta name="rating" content="General">
+    <meta name="robots" content="index,follow">
+    <meta name="robots" content="ALL">
+    <meta name="revisit-after" content="1 days">
+    <meta name="copyright" content="Techline Investment & IT">
+    <meta name="title" content="This is the Title" />
+    <meta name="description" content="This is a short summary of the page." />
+    <style>
+
+        #footer li {
+            display: inline-block;
+            width: 150px;
+            background: none;
+        }
+
+            #footer li a {
+                background: none;
+                border-left: none;
+                color: #fff;
+            }
+
+            #footer li ul {
+                display: none;
+            }
+
+        #footer h3 {
+            color: #eee;
+            font-size: 17px;
+            margin-top: 5px;
+        }
+
+        #footer li a {
+            line-height: 32px;
+        }
+
+        #footer .main_menu_links > li > a > i {
+            display: none;
+        }
+
+        img {
+            border-radius: 1rem !important;
+        }
+
+        .div-new-2 {
+            border-radius: 1rem;
+        }
+
+        .background-Enterprise-news {
+            border-radius: 1rem;
+        }
+
+        .s_head {
+            border-radius: 1rem;
+        }
+
+        .box_name {
+            border-radius: 0 0.8rem 0.8rem 0;
+        }
+
+        .background-new-1 {
+            margin-top: 1%;
+        }
+
+
+        .esdarat-thumb {
+            width: 150px;
+            hight: 110px;
+            floate: right;
+        }
+
+        .esdarat-thumb {
+            width: 100% !important;
+            padding-bottom: 15px;
+        }
+
+            .esdarat-thumb .detail {
+                height: 60px;
+                overflow: hidden;
+            }
+
+            .esdarat-thumb img {
+                max-height: 315px !important;
+                width: 100% !important;
+            }
+
+        .height-background-Enterprise-news {
+            height: 800px !important;
+            overflow: hidden;
+        }
+
+        .background-Studies-videos {
+            border-radius: 1rem;
+        }
+
+        .v_news_main .vm_thumb {
+            width: 27% !important;
+        }
+
+        .mNews_item iframe {
+            width: 100% !important;
+            height: 200px !important;
+            margin-bottom: 20px !important;
+        }
+
+        .v_news_main .vm_thumb > a > img {
+            max-height: 100px !important;
+            width: 100% !important;
+            min-height: 100px !important;
+        }
+
+        .quds-m {
+            width: 49%;
+            display: inline-block;
+        }
+
+        .section_majorNews-1 {
+            background-color: #f7f7f7 !important;
+        }
+
+        .section_Enterprise-news {
+            background-color: #f7f7f7 !important;
+        }
+
+        .Studies-videos {
+            background-color: #f7f7f7 !important;
+        }
+
+        .section-Tweets {
+            background-color: #f7f7f7 !important;
+        }
+
+        .box_more {
+            font-size: 14px;
+        }
+
+        .about_module img {
+            width: 95% height: 310px;
+            max-height: 350px;
+        }
+
+
+        element.style {
+        }
+
+        .background-new-1 {
+            margin-top: 1%;
+        }
+
+        .background-new-1 {
+            margin-top: 1%;
+        }
+
+        .background-new-1 {
+            height: 335px;
+        }
+
+        #footer {
+            padding-top: 35px;
+            background-color: #333333;
+            padding-bottom: 0px;
+        }
+
+        .bottom_footer {
+            background-color: #222;
+            margin-top: 15px;
+            padding-top: 5px;
+        }
+
+        .ekko-lightbox-nav-overlay a span {
+            position: absolute;
+        }
+
+        .zoom-img {
+            margin: 25px 0;
+        }
+        .post-thumb img {
+            width: 100%;
+        }
+        .submenu {
+            top: 0;
+            position: absolute;
+            right: 100%;
+            width: 200px;
+            background: #fff;
+            padding: 10px;
+            border: #e0e0e0 solid 1px;
+        }
+    </style>
+    @RenderSection("css", false)
+
+</head>
+<body>
+
+
+
+
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=543217649092266";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+
+    <script>
+        window.onload = function () {
+            document.getElementById("date-time").innerHTML = '<i class="fa fa-calendar"></i> ' + Date();
+        }
+    </script>
+    <div class="top_bar">
+        <div class="container padding-left-0 padding-right-0">
+            <div class="top_bar_right">
+                <div class="date_time" id="date-timev"><i class="fa fa-calendar"></i> @DateTime.Now بتوقيت القدس</div>
+            </div>
+            <div class="top_bar_left">
+                <ul class="social_head clearfix">
+                    @foreach (var item in contact)
+                    {
+                        <li>
+                            @if (item.Link != null)
+                            {
+                                <a href="@item.Link"><i class="@item.SocialMedia" style="color:white;"></i></a>
+                            }
+                        </li>
+                    }
+                </ul>
+            </div><!-- top-bar left -->
+
+        </div><!-- container -->
+    </div><!--top_bar-->
+    <div class="mobile-menu">
+        <div class="menu-mobile">
+            <div class="brand-area">
+                <a href="index.html">
+                    <img src="@Logo">
+                </a>
+            </div>
+
+
+
+            <div class="mmenu">
+                <ul>
+                    <li>
+                        <a href="/home/index"><i class="fa fa-align-right" aria-hidden="true"></i>الرئيسية</a>
+                    </li>
+
+                 
+                    <li>
+                        <a href="#">تعريف بالمؤسسة</a>
+                        <ul class="submenu">
+                            @foreach (var item in subTitle.Where(x => x.NewsCategoryId == 25))
+                            {
+                                <li class="">
+                                    @item.Name
+                                    <ul class="submenu">
+                                        @foreach (var itema in About.Where(x => x.TitleSubId == item.Id))
+                                        {
+                                            <li>
+                                                <a href="/About/Index/@itema.Id">@itema.Title</a>
+                                            </li>
+                                        }
+                                    </ul>
+
+                                </li>
+                            }
+                        </ul>
+
+                    </li>
+                    <li>
+                        <a href="/News/GetAll">أخبار المؤسسة</a>
+                        <ul class="">
+                            @foreach (var item in subTitle.Where(x => x.NewsCategoryId == 2))
+                            {
+                                <li class="list-group-item">
+                                    <a>@item.Name</a>
+                                    <ul class="submenu">
+                                        @foreach (var itema in About.Where(x => x.TitleSubId == item.Id))
+                                        {
+                                            <li>
+                                                <a href="/About/Index/@itema.Id">@itema.Title</a>
+                                            </li>
+                                        }
+                                    </ul>
+
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/News/Index/18">القدس</a>
+                        <ul class="">
+                            @foreach (var item in subTitle.Where(x => x.NewsCategoryId == 18))
+                            {
+                                <li class="list-group-item">
+                                    <a>@item.Name</a>
+                                    <ul class="submenu">
+                                        @foreach (var itema in About.Where(x => x.TitleSubId == item.Id))
+                                        {
+                                            <li>
+                                                <a href="/About/Index/@itema.Id">@itema.Title</a>
+                                            </li>
+                                        }
+                                    </ul>
+
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/News/Index/5">دراسات وأبحاث</a>
+                        <ul class="">
+                            @foreach (var item in subTitle.Where(x => x.NewsCategoryId == 5))
+                            {
+                                <li class="list-group-item">
+                                    <a>@item.Name</a>
+                                    <ul class="submenu">
+                                        @foreach (var itema in About.Where(x => x.TitleSubId == item.Id))
+                                        {
+                                            <li>
+                                                <a href="/About/Index/@itema.Id">@itema.Title</a>
+                                            </li>
+                                        }
+                                    </ul>
+
+                                </li>
+                            }
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="/News/Index/1">مقالات</a>
+                        <ul class="">
+                            @foreach (var item in subTitle.Where(x => x.NewsCategoryId == 1))
+                            {
+                                <li class="list-group-item">
+                                    <a>@item.Name</a>
+                                    <ul class="submenu">
+                                        @foreach (var itema in About.Where(x => x.TitleSubId == item.Id))
+                                        {
+                                            <li>
+                                                <a href="/About/Index/@itema.Id">@itema.Title</a>
+                                            </li>
+                                        }
+                                    </ul>
+
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/News/Index/9">مؤتمرات</a>
+                        <ul class="">
+                            @foreach (var item in subTitle.Where(x => x.NewsCategoryId == 9))
+                            {
+                                <li class="list-group-item">
+                                    <a>@item.Name</a>
+                                    <ul class="submenu">
+                                        @foreach (var itema in About.Where(x => x.TitleSubId == item.Id))
+                                        {
+                                            <li>
+                                                <a href="/About/Index/@itema.Id">@itema.Title</a>
+                                            </li>
+                                        }
+                                    </ul>
+
+                                </li>
+                            }
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="/Attachments/Index">
+                            اصدارات المؤسسة <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </a>
+                        <ul class="">
+                            @foreach (var item in CatAttatcment)
+                            {
+                                <li><a href="/Attachments/Get/@item.Id">@item.Name</a></li>
+                            }
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/Videos/Index">
+                            وسائط مرئية <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </a>
+                        <ul class="">
+                            <li><a href="/GalleryImages/Index">البوم الصور</a></li>
+                            <li><a href="/Videos/Index">البوم الفيديو</a></li>
+                        </ul>
+
+                    </li>
+
+                    <li>
+                        <a href="/ContactUs/Create">اتصل بنا</a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+        <div class="m-overlay"></div>
+    </div><!--mobile-menu-->
+    <div class="main-wrapper">
+        <header id="header">
+            <div class="header-logo">
+                <div class="container padding-left-0 padding-right-0">
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="head_logo">
+
+                                <img src="@Logo" alt="@Title" class="img-responsive">
+
+                            </div>
+
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="banar-ads">
+                                @foreach (var item in Ads.Take(1))
+                                {
+
+                                    <a href="#" title="" target="_blank">
+                                        <img src="~/Images/@item.imeg" class="img-responsive">
+                                    </a>
+
+
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--header-logo-->
+            <div class="header-menu" id="nav_bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 padding-left-0 padding-right-0">
+                            <div class="menu_search_bar clearfix">
+                                <div class="main-menu">
+                                    <ul class="main_menu_links clearfix">
+                                        <li>
+                                            <a href="/home/index"><i class="fa fa-align-right" aria-hidden="true"></i>الرئيسية</a>
+                                        </li>
+
+
+                                        <li>
+                                            <a href="#">تعريف بالمؤسسة</a>
+                                            <ul class="">
+                                                @foreach (var item in subTitle.Where(x => x.NewsCategoryId == 25))
+                                                {
+                                                    <li class="list-group-item">
+                                                        <a >@item.Name</a>
+                                                       <ul class="submenu">
+                                                            @foreach (var itema in About.Where(x=>x.TitleSubId== item.Id))
+                                                            {
+                                                                <li>
+                                                                    <a href="/About/Index/@itema.Id" >@itema.Title</a>
+                                                                </li>
+                                                            }
+                                                        </ul>
+
+                                                    </li>
+                                                }
+                                            </ul>
+
+                                        </li>
+                                        <li>
+                                            <a href="/News/GetAll">أخبار المؤسسة</a>
+                                            <ul class="">
+                                                @foreach (var item in subTitle.Where(x => x.NewsCategoryId == 2))
+                                                {
+                                                    <li class="list-group-item">
+                                                        <a>@item.Name</a>
+                                                        <ul class="submenu">
+                                                            @foreach (var itema in About.Where(x => x.TitleSubId == item.Id))
+                                                            {
+                                                                <li>
+                                                                    <a href="/About/Index/@itema.Id">@itema.Title</a>
+                                                                </li>
+                                                            }
+                                                        </ul>
+
+                                                    </li>
+                                                }
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="/News/Index/18">القدس</a>
+                                            <ul class="">
+                                                @foreach (var item in subTitle.Where(x => x.NewsCategoryId == 18))
+                                                {
+                                                    <li class="list-group-item">
+                                                        <a>@item.Name</a>
+                                                        <ul class="submenu">
+                                                            @foreach (var itema in About.Where(x => x.TitleSubId == item.Id))
+                                                            {
+                                                                <li>
+                                                                    <a href="/About/Index/@itema.Id">@itema.Title</a>
+                                                                </li>
+                                                            }
+                                                        </ul>
+
+                                                    </li>
+                                                }
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="/News/Index/5">دراسات وأبحاث</a>
+                                            <ul class="">
+                                                @foreach (var item in subTitle.Where(x => x.NewsCategoryId == 5))
+                                                {
+                                                    <li class="list-group-item">
+                                                        <a>@item.Name</a>
+                                                        <ul class="submenu">
+                                                            @foreach (var itema in About.Where(x => x.TitleSubId == item.Id))
+                                                            {
+                                                                <li>
+                                                                    <a href="/About/Index/@itema.Id">@itema.Title</a>
+                                                                </li>
+                                                            }
+                                                        </ul>
+
+                                                    </li>
+                                                }
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a href="/News/Index/1">مقالات</a>
+                                            <ul class="">
+                                                @foreach (var item in subTitle.Where(x => x.NewsCategoryId == 1))
+                                                {
+                                                    <li class="list-group-item">
+                                                        <a>@item.Name</a>
+                                                        <ul class="submenu">
+                                                            @foreach (var itema in About.Where(x => x.TitleSubId == item.Id))
+                                                            {
+                                                                <li>
+                                                                    <a href="/About/Index/@itema.Id">@itema.Title</a>
+                                                                </li>
+                                                            }
+                                                        </ul>
+
+                                                    </li>
+                                                }
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="/News/Index/9">مؤتمرات</a>
+                                            <ul class="">
+                                                @foreach (var item in subTitle.Where(x => x.NewsCategoryId == 9))
+                                                {
+                                                    <li class="list-group-item">
+                                                        <a>@item.Name</a>
+                                                        <ul class="submenu">
+                                                            @foreach (var itema in About.Where(x => x.TitleSubId == item.Id))
+                                                            {
+                                                                <li>
+                                                                    <a href="/About/Index/@itema.Id">@itema.Title</a>
+                                                                </li>
+                                                            }
+                                                        </ul>
+
+                                                    </li>
+                                                }
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a href="/Attachments/Index">
+                                                اصدارات المؤسسة <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                            </a>
+                                            <ul class="">
+                                                @foreach (var item in CatAttatcment)
+                                                {
+                                                    <li><a href="/Attachments/Get/@item.Id">@item.Name</a></li>
+                                                }
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="/Videos/Index">
+                                                وسائط مرئية <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                            </a>
+                                            <ul class="">
+                                                <li><a href="/GalleryImages/Index">البوم الصور</a></li>
+                                                <li><a href="/Videos/Index">البوم الفيديو</a></li>
+                                            </ul>
+
+                                        </li>
+
+                                        <li>
+                                            <a href="/ContactUs/Create">اتصل بنا</a>
+                                        </li>
+
+
+
+                                    </ul>
+                                </div>
+                                <button type="button" class="hamburger is-closed">
+                                    <span class="hamb-top"></span>
+                                    <span class="hamb-middle"></span>
+                                    <span class="hamb-bottom"></span>
+                                </button>
+                                <div class="search">
+                                    <form action="#" method="get">
+                                        <input type="text" name="text" id="searchInput" placeholder="ابحث هنا...">
+                                        <label for="searchInput"><i class="fa fa-search" aria-hidden="true"></i></label>
+                                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--header-menu-->
+        </header><!--header-->
+
+        @RenderBody()
+
+        <footer id="footer">
+
+
+            <div class="top_footer">
+                <div class="container padding-left-0 padding-right-0">
+                    <div class="row row-max-width-ipad-pro">
+                        <div class="col-sm-3 max-width-ipad-pro">
+
+                            <a href="">
+                                <img src="~/images/logo-footer.png" alt="" class="logo-footer">
+                            </a>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="main-menu">
+                                <ul class="main_menu_links ">
+                                    <li>
+                                        <a href="/home/index"><i class="fa fa-align-right" aria-hidden="true"></i>الرئيسية</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">تعريف بالمؤسسة</a>
+                                        <ul class="">
+                                            @foreach (var item in subTitle.Where(x => x.NewsCategoryId == 25))
+                                            {
+                                                <li class="list-group-item">
+                                                    <a>@item.Name</a>
+                                                    <ul class="submenu">
+                                                        @foreach (var itema in About.Where(x => x.TitleSubId == item.Id))
+                                                        {
+                                                            <li>
+                                                                <a href="/About/Index/@itema.Id">@itema.Title</a>
+                                                            </li>
+                                                        }
+                                                    </ul>
+
+                                                </li>
+                                            }
+                                        </ul>
+
+                                    </li>
+                                    <li>
+                                        <a href="/News/GetAll">أخبار المؤسسة</a>
+                                        <ul class="">
+                                            @foreach (var item in subTitle.Where(x => x.NewsCategoryId == 2))
+                                            {
+                                                <li class="list-group-item">
+                                                    <a>@item.Name</a>
+                                                    <ul class="submenu">
+                                                        @foreach (var itema in About.Where(x => x.TitleSubId == item.Id))
+                                                        {
+                                                            <li>
+                                                                <a href="/About/Index/@itema.Id">@itema.Title</a>
+                                                            </li>
+                                                        }
+                                                    </ul>
+
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/News/Index/18">القدس</a>
+                                        <ul class="">
+                                            @foreach (var item in subTitle.Where(x => x.NewsCategoryId == 18))
+                                            {
+                                                <li class="list-group-item">
+                                                    <a>@item.Name</a>
+                                                    <ul class="submenu">
+                                                        @foreach (var itema in About.Where(x => x.TitleSubId == item.Id))
+                                                        {
+                                                            <li>
+                                                                <a href="/About/Index/@itema.Id">@itema.Title</a>
+                                                            </li>
+                                                        }
+                                                    </ul>
+
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/News/Index/5">دراسات وأبحاث</a>
+                                        <ul class="">
+                                            @foreach (var item in subTitle.Where(x => x.NewsCategoryId == 5))
+                                            {
+                                                <li class="list-group-item">
+                                                    <a>@item.Name</a>
+                                                    <ul class="submenu">
+                                                        @foreach (var itema in About.Where(x => x.TitleSubId == item.Id))
+                                                        {
+                                                            <li>
+                                                                <a href="/About/Index/@itema.Id">@itema.Title</a>
+                                                            </li>
+                                                        }
+                                                    </ul>
+
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+                           
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+
+                            <ul class="main_menu_links ">
+                                <li>
+                                    <a href="/News/Index/1">مقالات</a>
+                                    <ul class="">
+                                        @foreach (var item in subTitle.Where(x => x.NewsCategoryId == 1))
+                                        {
+                                            <li class="list-group-item">
+                                                <a>@item.Name</a>
+                                                <ul class="submenu">
+                                                    @foreach (var itema in About.Where(x => x.TitleSubId == item.Id))
+                                                    {
+                                                        <li>
+                                                            <a href="/About/Index/@itema.Id">@itema.Title</a>
+                                                        </li>
+                                                    }
+                                                </ul>
+
+                                            </li>
+                                        }
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/News/Index/9">مؤتمرات</a>
+                                    <ul class="">
+                                        @foreach (var item in subTitle.Where(x => x.NewsCategoryId == 9))
+                                        {
+                                            <li class="list-group-item">
+                                                <a>@item.Name</a>
+                                                <ul class="submenu">
+                                                    @foreach (var itema in About.Where(x => x.TitleSubId == item.Id))
+                                                    {
+                                                        <li>
+                                                            <a href="/About/Index/@itema.Id">@itema.Title</a>
+                                                        </li>
+                                                    }
+                                                </ul>
+
+                                            </li>
+                                        }
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/Attachments/Index">
+                                        اصدارات المؤسسة <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                    </a>
+                                    <ul class="">
+                                        @foreach (var item in CatAttatcment)
+                                        {
+                                            <li><a href="/Attachments/Get/@item.Id">@item.Name</a></li>
+                                        }
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/Videos/Index">
+                                        وسائط مرئية <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                    </a>
+                                    <ul class="">
+                                        <li><a href="/GalleryImages/Index">البوم الصور</a></li>
+                                        <li><a href="/Videos/Index">البوم الفيديو</a></li>
+                                    </ul>
+
+                                </li>
+                                <li>
+                                    <a href="/ContactUs/Create">اتصل بنا</a>
+                                </li>
+                            </ul>
+
+
+
+                        </div>
+                        <div class="col-sm-3">
+
+                            <h3>البريد الالكتروني : @Email</h3>
+                            <br />
+
+                            <h3>رقم الجوال : @settings.MobileNo</h3>
+                            <br />
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="bottom_footer">
+                <div class="container">
+                    <p class="copy_right"> جميع الحقوق محفوظة © 2021 <span> ليبوس القدس </span></p>
+                </div>
+            </div>
+
+
+        </footer><!--footer-->
+        <!--main-wrapper-->
+        <script src="~/js/wow.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="~/js/bootstrap.min.js"></script>
+        <script src="~/js/tickerme.min.js"></script>
+        <script src="~/js/script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+        <script src="~/js/splide.min.js"></script>
+        <script>
+
+            $(window).scroll(function () {
+                //if you hard code, then use console
+                //.log to determine when you want the
+                //nav bar to stick.
+                console.log($(window).scrollTop())
+                if ($(window).scrollTop() > 120) {
+                    $('#nav_bar').addClass('fixed-top');
+                }
+                if ($(window).scrollTop() < 121) {
+                    $('#nav_bar').removeClass('fixed-top');
+                }
+            });
+        </script>
+        <script>
+            $('.breaking-news button').click(function () {
+                $(this).parent().fadeOut();
+            });
+        </script>
+
+        @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
+
+

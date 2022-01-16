@@ -1,0 +1,39 @@
+﻿@model YabousNews.Data.Models.About
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+
+}
+<br />
+<section class="content_inner_page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="primary_right">
+                    <!--<div class="banar-ads">
+                        <a href="#" title="" target="_blank">
+                            <img src="/images/ads1.jpg" alt="" class="img-responsive">
+                        </a>
+                    </div>-->
+                    <div >
+                        <h1 class="page-title">@Model.Title</h1>
+                        <div class="post-thumb">
+                            <p class="text-center" style=" font-size: 35px; ">
+                                @Html.Raw(Model.Description)
+                            </p>
+                        </div>
+                    </div>
+                </div><!--primary_right-->
+            </div>
+
+
+
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

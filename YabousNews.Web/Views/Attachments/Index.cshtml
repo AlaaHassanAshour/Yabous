@@ -1,0 +1,63 @@
+﻿@model IEnumerable<YabousNews.Data.Models.Attachment>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+
+
+<style>
+
+    .esdar a {
+        font-size: 16px;
+    }
+
+
+    .esdar img {
+        margin-top: 20px;
+    }
+</style>
+
+<section class="content_inner_page">
+    <div class="container">
+        <div class="row ">
+
+            <div class="col-md-12 esdar">
+                <div class="primary_right">
+
+                    <ol class="breadcrumb">
+                        <li><a href=""><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                        <li><a href="">اسم الاصدار</a></li>
+                    </ol>
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-md-3" style=" margin-top: 15px; border: #eee solid 1px; padding: 20px; text-align: center;">
+                            <a href="~/Files/@item.File" target="_blank">@item.Title</a>
+                            <div class="post-thumb">
+                                <a  href="~/Files/@item.File" target="_blank" >
+                                    <img src="~/Images/@item.Image" alt="" class="img-responsive "/>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                    }
+
+
+
+                </div><!--primary_right-->
+            </div>
+
+
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+

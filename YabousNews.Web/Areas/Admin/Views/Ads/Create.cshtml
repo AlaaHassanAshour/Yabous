@@ -1,0 +1,45 @@
+﻿@model YabousNews.Data.Models.Ads
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<hr />
+<div class="row content">
+    <div class="col-md-4">
+        <form action="/Admin/Ads/Create" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label"> الاسم</label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">الرابط</label>
+                <input asp-for="url" class="form-control" />
+                <span asp-validation-for="url" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">الصورة</label>
+                <input type="file" multiple asp-for="imeg" class="form-control" />
+                <span asp-validation-for="imeg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label"> مكان ضهور الاعلان</label>
+                <select asp-for="UpDown"asp-items="@new  SelectList(Enum.GetNames(typeof(YabousNews.Data.Models.Ads.EAds)))" class="form-control" > 
+                    <option selected="selected" value="">اختر مكان الضهور</option>
+                </select>
+                <span asp-validation-for="UpDown" class="text-danger" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="حفظ" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

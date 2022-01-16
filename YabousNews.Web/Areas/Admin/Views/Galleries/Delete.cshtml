@@ -1,0 +1,30 @@
+﻿@model YabousNews.Data.Models.Gallery
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = null;
+}
+
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+
+    </dl>
+
+    <form action="/Admin/Galleries/Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+    </form>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

@@ -1,0 +1,286 @@
+﻿@inject YabousNews.Data.ApplicationDbContext context
+@{
+    var settings = context.Settings.Find(1);
+    var Logo = !string.IsNullOrEmpty(settings.Logo) ? "/media/images/logo2.png" : "~/Images/" + settings.Logo;
+    var Title = settings.Title;
+    var contact = context.Contact.Where(x => x.IsDelete.Equals(false)).ToList();
+    var About = context.About.Where(x => x.Id != 1).OrderByDescending(x => x.Id).ToList();
+    }
+
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <meta charset="utf-8">
+    <title>الــبوم الصــور</title>
+    <!-- Stylesheets -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/font-awesome.css" rel="stylesheet">
+    <link href="../css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/bootstrap-rtl.min.css" rel="stylesheet">
+
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="../css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+
+
+    <meta name="description" content="وكالة غزة الآن الإخبارية">
+    <meta name="keywords" content="وكالة غزة الآن الإخبارية">
+    <meta name="author" content="">
+    <meta name="rating" content="General">
+    <meta name="robots" content="index,follow">
+    <meta name="robots" content="ALL">
+    <meta name="revisit-after" content="1 days">
+    <meta name="copyright" content="Techline Investment & IT">
+
+
+
+
+
+    <style>
+        .breaking-news {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            background: #D90000;
+            color: #FFF;
+            z-index: 9999;
+            padding: 15px 35px;
+            text-align: center;
+        }
+
+            .breaking-news button {
+                background: none;
+                border: none;
+                color: #FFF;
+                font-weight: bold;
+                font-size: 28px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+            }
+    </style>
+
+
+</head>
+<body>
+
+
+
+
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=543217649092266";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+
+    <script>
+        window.onload = function () {
+            document.getElementById("date-time").innerHTML = '<i class="fa fa-calendar"></i> ' + Date();
+        }
+    </script>
+
+        <div class="m-overlay"></div>
+    <!--mobile-menu-->
+        <div class="main-wrapper">
+            <header id="header">
+                <div class="header-logo">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <div class="head_logo">
+                                    <a href="../index.html">
+                                        <img src="../images/logo2.png" alt="" class="img-responsive">
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div><!--header-logo-->
+                <div class="header-menu" id="nav_bar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 padding-left-0 padding-right-0">
+                                <div class="menu_search_bar clearfix">
+                                    <div class="main-menu">
+                                        <ul class="main_menu_links clearfix">
+                                            <li>
+                                                <a href="/home/index"><i class="fa fa-align-right" aria-hidden="true"></i>الرئيسية</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/About/Index">تعريف بالمؤسسة</a>
+                                                <ul class="dropdown-menu">
+                                                    @foreach (var item in About)
+                                                    {
+                                        <li><a href="/About/Index/@item.Id">@item.Title</a></li>}
+                                                </ul>
+
+                                            </li>
+                                            <li>
+                                                <a href="/home/index">أخبار المؤسسة</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    القدس <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/News/Index/5">دراسات وأبحاث</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Attachments/Index">
+                                                    اصدارات المؤسسة <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/Videos/Index">
+                                                    وسائط مرئية <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                                </a>
+                                                <ul class="">
+                                                    <li><a href="/GalleryImages/Index">البوم الصور</a></li>
+                                                    <li><a href="/Videos/Index">البوم الفيدو</a></li>
+                                                </ul>
+
+                                            </li>
+                                            <li>
+                                                <a href="/News/Index/1">مقالات</a>
+                                            </li>
+                                            <li>
+                                                <a href="/News/Index/9">مؤتمرات</a>
+                                            </li>
+                                            <li>
+                                                <a href="/ContactUs/Create">اتصل بنا</a>
+                                            </li>
+
+
+
+                                        </ul>
+                                    </div>
+                                    <button type="button" class="hamburger is-closed">
+                                        <span class="hamb-top"></span>
+                                        <span class="hamb-middle"></span>
+                                        <span class="hamb-bottom"></span>
+                                    </button>
+                                    <div class="search">
+                                        <form action="#" method="get">
+                                            <input type="text" name="text" id="searchInput" placeholder="ابحث هنا...">
+                                            <label for="searchInput"><i class="fa fa-search" aria-hidden="true"></i></label>
+                                            <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--header-menu-->
+            </header><!--header-->
+
+
+            <div>
+                @RenderBody()
+            </div>
+
+            <footer id="footer">
+
+
+                <div class="top_footer">
+                    <div class="container padding-left-0 padding-right-0">
+                        <div class="row row-max-width-ipad-pro">
+                            <div class="col-lg-5 max-width-ipad-pro">
+                                <ul class="f_menu clearfix">
+                                    <li><a href="/home/index">الرئيسية</a></li>
+                                    <li>
+                                        <a href="/About/Index">تعريف بالمؤسسة</a>
+                                        <ul class="dropdown-menu">
+                                            @foreach (var item in About)
+                                            {
+                                <li><a href="/About/Index/@item.Id">@item.Title</a></li>}
+                                        </ul>
+
+                                    </li>
+                                    <li><a href="/home/index">اخبار المؤسسة</a></li>
+                                    <li><a href="/News/Index/18">القدس</a></li>
+                                    <li><a href="/News/Index/5">دراسات وأبحاث</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2 max-width-ipad-pro-logo" style="text-align: center;">
+                                <div class="f-logo">
+                                    <a href="">
+                                        <img src="~/images/7d912cd133de438894b47c41b0850b77.png" alt="" class="logo-footer">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 max-width-ipad-pro">
+                                <ul class="f_menu clearfix">
+                                    <li><a href="/Attachments/Index">اصدارات المؤسسة</a></li>
+                                    <li><a href="/Videos/Index">وسائط ومرئيات</a></li>
+                                    <li><a href="/News/Index/1">المقالات </a></li>
+                                    <li><a href="/News/Index/9">المؤتمرات</a></li>
+                                    <li><a href="/ContactUs/Create">اتصل بنا</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bottom_footer">
+                    <div class="container">
+                        <p class="copy_right"> جميع الحقوق محفوظة © 2021 <span> ليبوس القدس </span></p>
+                    </div>
+                </div>
+
+
+            </footer><!--footer-->
+        </div><!--main-wrapper-->
+    <script src="../js/wow.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/tickerme.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+
+        $(window).scroll(function () {
+            //if you hard code, then use console
+            //.log to determine when you want the
+            //nav bar to stick.
+            console.log($(window).scrollTop())
+            if ($(window).scrollTop() > 120) {
+                $('#nav_bar').addClass('fixed-top');
+            }
+            if ($(window).scrollTop() < 121) {
+                $('#nav_bar').removeClass('fixed-top');
+            }
+        });
+    </script>
+
+    <script>
+        $('#myTabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+
+        $('.breaking-news button').click(function () {
+            $(this).parent().fadeOut();
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
